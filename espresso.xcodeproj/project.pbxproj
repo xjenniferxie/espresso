@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		64C464AE2193E747004D4EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C464AD2193E747004D4EA7 /* AppDelegate.swift */; };
-		64C464B02193E747004D4EA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C464AF2193E747004D4EA7 /* ViewController.swift */; };
 		64C464B32193E747004D4EA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64C464B12193E747004D4EA7 /* Main.storyboard */; };
 		64C464B52193E74A004D4EA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64C464B42193E74A004D4EA7 /* Assets.xcassets */; };
 		64C464B82193E74A004D4EA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64C464B62193E74A004D4EA7 /* LaunchScreen.storyboard */; };
+		64E846CC219D1B7200FD9376 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846CB219D1B7200FD9376 /* HomeViewController.swift */; };
+		64E846CE219D1BC400FD9376 /* AddDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846CD219D1BC400FD9376 /* AddDrinkViewController.swift */; };
+		64E846D0219D1C4000FD9376 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846CF219D1C4000FD9376 /* MainTabBarController.swift */; };
+		64E846D2219D1C9600FD9376 /* SpendingTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846D1219D1C9600FD9376 /* SpendingTabController.swift */; };
+		64E846D4219D1D3A00FD9376 /* CurrentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846D3219D1D3A00FD9376 /* CurrentViewController.swift */; };
+		64E846D6219D1D5A00FD9376 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846D5219D1D5A00FD9376 /* HistoryViewController.swift */; };
+		64E846DC219D1F9F00FD9376 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846DB219D1F9F00FD9376 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		64C464AA2193E747004D4EA7 /* espresso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = espresso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64C464AD2193E747004D4EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		64C464AF2193E747004D4EA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		64C464B22193E747004D4EA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64C464B42193E74A004D4EA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64C464B72193E74A004D4EA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64C464B92193E74A004D4EA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64E846CB219D1B7200FD9376 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		64E846CD219D1BC400FD9376 /* AddDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDrinkViewController.swift; sourceTree = "<group>"; };
+		64E846CF219D1C4000FD9376 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		64E846D1219D1C9600FD9376 /* SpendingTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTabController.swift; sourceTree = "<group>"; };
+		64E846D3219D1D3A00FD9376 /* CurrentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentViewController.swift; sourceTree = "<group>"; };
+		64E846D5219D1D5A00FD9376 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		64E846DB219D1F9F00FD9376 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +66,36 @@
 		64C464AC2193E747004D4EA7 /* espresso */ = {
 			isa = PBXGroup;
 			children = (
+				64E846CA219D1AF100FD9376 /* Model */,
+				64E846C9219D1ABC00FD9376 /* View Controller */,
 				64C464AD2193E747004D4EA7 /* AppDelegate.swift */,
-				64C464AF2193E747004D4EA7 /* ViewController.swift */,
 				64C464B12193E747004D4EA7 /* Main.storyboard */,
 				64C464B42193E74A004D4EA7 /* Assets.xcassets */,
 				64C464B62193E74A004D4EA7 /* LaunchScreen.storyboard */,
 				64C464B92193E74A004D4EA7 /* Info.plist */,
 			);
 			path = espresso;
+			sourceTree = "<group>";
+		};
+		64E846C9219D1ABC00FD9376 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				64E846CB219D1B7200FD9376 /* HomeViewController.swift */,
+				64E846CD219D1BC400FD9376 /* AddDrinkViewController.swift */,
+				64E846CF219D1C4000FD9376 /* MainTabBarController.swift */,
+				64E846D1219D1C9600FD9376 /* SpendingTabController.swift */,
+				64E846D3219D1D3A00FD9376 /* CurrentViewController.swift */,
+				64E846D5219D1D5A00FD9376 /* HistoryViewController.swift */,
+				64E846DB219D1F9F00FD9376 /* NavigationController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		64E846CA219D1AF100FD9376 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +169,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64C464B02193E747004D4EA7 /* ViewController.swift in Sources */,
 				64C464AE2193E747004D4EA7 /* AppDelegate.swift in Sources */,
+				64E846DC219D1F9F00FD9376 /* NavigationController.swift in Sources */,
+				64E846CE219D1BC400FD9376 /* AddDrinkViewController.swift in Sources */,
+				64E846D2219D1C9600FD9376 /* SpendingTabController.swift in Sources */,
+				64E846D0219D1C4000FD9376 /* MainTabBarController.swift in Sources */,
+				64E846D4219D1D3A00FD9376 /* CurrentViewController.swift in Sources */,
+				64E846D6219D1D5A00FD9376 /* HistoryViewController.swift in Sources */,
+				64E846CC219D1B7200FD9376 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
