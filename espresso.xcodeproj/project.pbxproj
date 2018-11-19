@@ -23,6 +23,8 @@
 		64E846D4219D1D3A00FD9376 /* CurrentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846D3219D1D3A00FD9376 /* CurrentViewController.swift */; };
 		64E846D6219D1D5A00FD9376 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846D5219D1D5A00FD9376 /* HistoryViewController.swift */; };
 		64E846DC219D1F9F00FD9376 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846DB219D1F9F00FD9376 /* NavigationController.swift */; };
+		64F3AB3A21A2A53500216A4F /* NumbersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F3AB3921A2A53500216A4F /* NumbersCell.xib */; };
+		64F3AB3C21A2A9B900216A4F /* NumbersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F3AB3B21A2A9B900216A4F /* NumbersCell.swift */; };
 		64FBB2CB21A28ADE00DE4CF2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64FBB2CA21A28ADE00DE4CF2 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		64E846D3219D1D3A00FD9376 /* CurrentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentViewController.swift; sourceTree = "<group>"; };
 		64E846D5219D1D5A00FD9376 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		64E846DB219D1F9F00FD9376 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		64F3AB3921A2A53500216A4F /* NumbersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumbersCell.xib; sourceTree = "<group>"; };
+		64F3AB3B21A2A9B900216A4F /* NumbersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersCell.swift; sourceTree = "<group>"; };
 		64FBB2CA21A28ADE00DE4CF2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		953BCF6ABBDDBF848BD8FA9A /* Pods-espresso.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-espresso.debug.xcconfig"; path = "Pods/Target Support Files/Pods-espresso/Pods-espresso.debug.xcconfig"; sourceTree = "<group>"; };
 		EE4337F51BCA273B3BA2F992 /* Pods_espresso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_espresso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +101,7 @@
 		64C464AC2193E747004D4EA7 /* espresso */ = {
 			isa = PBXGroup;
 			children = (
+				64F3AB3821A2A4ED00216A4F /* Custom Rows */,
 				64E846CA219D1AF100FD9376 /* Model */,
 				64E846C9219D1ABC00FD9376 /* View Controller */,
 				64C464AD2193E747004D4EA7 /* AppDelegate.swift */,
@@ -130,6 +135,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		64F3AB3821A2A4ED00216A4F /* Custom Rows */ = {
+			isa = PBXGroup;
+			children = (
+				64F3AB3921A2A53500216A4F /* NumbersCell.xib */,
+				64F3AB3B21A2A9B900216A4F /* NumbersCell.swift */,
+			);
+			path = "Custom Rows";
 			sourceTree = "<group>";
 		};
 		668052F2FC9F7A9DBC221298 /* Frameworks */ = {
@@ -213,6 +227,7 @@
 				64C464B82193E74A004D4EA7 /* LaunchScreen.storyboard in Resources */,
 				64C464B52193E74A004D4EA7 /* Assets.xcassets in Resources */,
 				64FBB2CB21A28ADE00DE4CF2 /* Colors.xcassets in Resources */,
+				64F3AB3A21A2A53500216A4F /* NumbersCell.xib in Resources */,
 				64C464B32193E747004D4EA7 /* Main.storyboard in Resources */,
 				64554DF821A22AAD008B2E66 /* Info.plist in Resources */,
 			);
@@ -278,6 +293,7 @@
 				64E846CE219D1BC400FD9376 /* AddDrinkViewController.swift in Sources */,
 				64554DFE21A26DD9008B2E66 /* SignUpViewController.swift in Sources */,
 				64E846D2219D1C9600FD9376 /* SpendingTabController.swift in Sources */,
+				64F3AB3C21A2A9B900216A4F /* NumbersCell.swift in Sources */,
 				64E846D0219D1C4000FD9376 /* MainTabBarController.swift in Sources */,
 				64E846D4219D1D3A00FD9376 /* CurrentViewController.swift in Sources */,
 				64E846D6219D1D5A00FD9376 /* HistoryViewController.swift in Sources */,
