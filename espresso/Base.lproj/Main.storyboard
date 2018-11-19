@@ -130,7 +130,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
-                                    <action selector="logInPressed:" destination="X1q-ey-3GX" eventType="touchUpInside" id="AGl-Gj-rt1"/>
+                                    <action selector="loginPressed:" destination="X1q-ey-3GX" eventType="touchUpInside" id="vtb-2F-eBP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="km7-LP-GOb">
@@ -161,10 +161,10 @@
             </objects>
             <point key="canvasLocation" x="1975" y="-1697"/>
         </scene>
-        <!--Signup View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="03c-z1-Hyb">
             <objects>
-                <viewController id="xfR-ZE-h2l" customClass="SignupViewController" sceneMemberID="viewController">
+                <viewController id="xfR-ZE-h2l" customClass="SignUpViewController" customModule="espresso" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SFy-cZ-NDR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,13 +188,13 @@
                                         <rect key="frame" x="0.0" y="60" width="375" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T1s-K9-0Al">
                                         <rect key="frame" x="0.0" y="90" width="375" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -202,11 +202,17 @@
                                 <rect key="frame" x="160" y="436" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpPressed:" destination="xfR-ZE-h2l" eventType="touchUpInside" id="qyh-02-Nxv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmD-zr-7CY">
                                 <rect key="frame" x="171" y="474" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="loginPressed:" destination="xfR-ZE-h2l" eventType="touchUpInside" id="BYP-3R-mHJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -218,6 +224,10 @@
                         <viewLayoutGuide key="safeArea" id="uBC-HU-Rs5"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="3PH-Ah-hbz" id="puw-NM-HnU"/>
+                        <outlet property="nameTextField" destination="g83-QC-jym" id="b6p-yd-vgz"/>
+                        <outlet property="passwordTextField" destination="CfI-5Y-EBJ" id="x2d-Ln-dZM"/>
+                        <outlet property="passwordVerificationTextField" destination="T1s-K9-0Al" id="geU-Vq-FkR"/>
                         <segue destination="X1q-ey-3GX" kind="show" identifier="signUpToLogin" id="ddh-da-RKH"/>
                         <segue destination="Tdv-ZB-bX0" kind="show" identifier="signUpToHome" id="AZh-s8-jxJ"/>
                     </connections>
@@ -269,7 +279,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AZh-s8-jxJ"/>
+        <segue reference="ktH-L2-RoC"/>
         <segue reference="n2y-wV-u9S"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,7 +17,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var userEmail = ""
     var userPassword = ""
     
-    @IBAction func logInPressed(_ sender: Any) {
+    @IBAction func loginPressed(_ sender: UIButton) {
         guard let emailText = emailTextField.text else { return }
         guard let passwordText = passwordTextField.text else { return }
         
@@ -27,9 +27,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
-        }  else {
-            // email and password fields are not blank, let's try logging in the user!
-            
+        }
+        else {
+            // email and password fields are not blank, let's try logging in the user!            
             Auth.auth().signIn(withEmail: emailText, password: passwordText) { (user, error) in
                 if (error == nil) {
                     self.performSegue(withIdentifier: "loginToHome", sender: self)
