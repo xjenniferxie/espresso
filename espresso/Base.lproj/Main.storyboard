@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,15 +16,28 @@
             <objects>
                 <viewController id="BdA-sC-4wm" customClass="HomeViewController" customModule="espresso" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lg2-2N-Hzk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5w-pG-9su">
+                                <rect key="frame" x="311" y="493" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Green"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPressed:" destination="BdA-sC-4wm" eventType="touchUpInside" id="zv8-yR-5Rp"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="FiX-z8-Ha3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="AqY-Lz-pwN"/>
                     <navigationItem key="navigationItem" title="Home" id="miy-o0-Fgg"/>
                     <connections>
-                        <segue destination="eZV-0m-My1" kind="show" id="W82-qa-Yh0"/>
+                        <segue destination="eZV-0m-My1" kind="show" identifier="homeToAddDrink" id="W82-qa-Yh0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V51-N0-ImV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -35,13 +49,13 @@
             <objects>
                 <viewController id="eZV-0m-My1" customClass="AddDrinkViewController" customModule="espresso" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r1h-R0-jii">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NzO-1i-wnk"/>
                     </view>
                     <connections>
-                        <segue destination="BdA-sC-4wm" kind="show" id="1et-d8-cub"/>
+                        <segue destination="BdA-sC-4wm" kind="show" identifier="addDrinkToHome" id="1et-d8-cub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lDq-zS-qWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -278,8 +292,13 @@
             <point key="canvasLocation" x="681" y="-127"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Green">
+            <color red="0.21600000560283661" green="0.75700002908706665" blue="0.52899998426437378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ktH-L2-RoC"/>
-        <segue reference="n2y-wV-u9S"/>
+        <segue reference="1et-d8-cub"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -23,6 +23,7 @@
 		64E846D4219D1D3A00FD9376 /* CurrentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846D3219D1D3A00FD9376 /* CurrentViewController.swift */; };
 		64E846D6219D1D5A00FD9376 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846D5219D1D5A00FD9376 /* HistoryViewController.swift */; };
 		64E846DC219D1F9F00FD9376 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846DB219D1F9F00FD9376 /* NavigationController.swift */; };
+		64FBB2CB21A28ADE00DE4CF2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64FBB2CA21A28ADE00DE4CF2 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		64E846D3219D1D3A00FD9376 /* CurrentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentViewController.swift; sourceTree = "<group>"; };
 		64E846D5219D1D5A00FD9376 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		64E846DB219D1F9F00FD9376 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		64FBB2CA21A28ADE00DE4CF2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		953BCF6ABBDDBF848BD8FA9A /* Pods-espresso.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-espresso.debug.xcconfig"; path = "Pods/Target Support Files/Pods-espresso/Pods-espresso.debug.xcconfig"; sourceTree = "<group>"; };
 		EE4337F51BCA273B3BA2F992 /* Pods_espresso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_espresso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -75,6 +77,7 @@
 		64C464A12193E746004D4EA7 = {
 			isa = PBXGroup;
 			children = (
+				64FBB2CA21A28ADE00DE4CF2 /* Colors.xcassets */,
 				64554DF921A23789008B2E66 /* GoogleService-Info.plist */,
 				64C464AC2193E747004D4EA7 /* espresso */,
 				64C464AB2193E747004D4EA7 /* Products */,
@@ -209,6 +212,7 @@
 				64554DFA21A23789008B2E66 /* GoogleService-Info.plist in Resources */,
 				64C464B82193E74A004D4EA7 /* LaunchScreen.storyboard in Resources */,
 				64C464B52193E74A004D4EA7 /* Assets.xcassets in Resources */,
+				64FBB2CB21A28ADE00DE4CF2 /* Colors.xcassets in Resources */,
 				64C464B32193E747004D4EA7 /* Main.storyboard in Resources */,
 				64554DF821A22AAD008B2E66 /* Info.plist in Resources */,
 			);
@@ -242,6 +246,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-espresso/Pods-espresso-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -249,6 +254,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -422,6 +428,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Eureka\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseDatabase\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleAppMeasurement/Frameworks\"",
+				);
 				INFOPLIST_FILE = espresso/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

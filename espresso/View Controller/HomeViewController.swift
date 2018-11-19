@@ -10,6 +10,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    @IBAction func addPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "homeToAddDrink", sender: sender)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
