@@ -7,22 +7,11 @@
 //
 
 import UIKit
-import Eureka
 
-class AddDrinkViewController: FormViewController {
+class AddDrinkViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        animateScroll = true
-        form +++ Section()
-            <<< DateInlineRow(){
-                $0.title = "Date Row"
-                $0.value = Date()
-            }
-            <<< SegmentedRow<String>("segments"){
-                $0.options = ["Coffee", "Boba", "Other"]
-                $0.value = "Coffee"
-            }
 
     }
     

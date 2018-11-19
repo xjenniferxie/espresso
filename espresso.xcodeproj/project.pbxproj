@@ -25,6 +25,9 @@
 		64E846DC219D1F9F00FD9376 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846DB219D1F9F00FD9376 /* NavigationController.swift */; };
 		64F3AB3A21A2A53500216A4F /* NumbersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F3AB3921A2A53500216A4F /* NumbersCell.xib */; };
 		64F3AB3C21A2A9B900216A4F /* NumbersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F3AB3B21A2A9B900216A4F /* NumbersCell.swift */; };
+		64F3AB3D21A34CE600216A4F /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64554DF621A22A93008B2E66 /* OpenSans-Bold.ttf */; };
+		64F3AB3E21A34CE600216A4F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64554DF521A22A93008B2E66 /* OpenSans-Regular.ttf */; };
+		64F3AB3F21A34CE600216A4F /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64554DF721A22A93008B2E66 /* OpenSans-Semibold.ttf */; };
 		64FBB2CB21A28ADE00DE4CF2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64FBB2CA21A28ADE00DE4CF2 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -223,6 +226,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64F3AB3D21A34CE600216A4F /* OpenSans-Bold.ttf in Resources */,
+				64F3AB3E21A34CE600216A4F /* OpenSans-Regular.ttf in Resources */,
+				64F3AB3F21A34CE600216A4F /* OpenSans-Semibold.ttf in Resources */,
 				64554DFA21A23789008B2E66 /* GoogleService-Info.plist in Resources */,
 				64C464B82193E74A004D4EA7 /* LaunchScreen.storyboard in Resources */,
 				64C464B52193E74A004D4EA7 /* Assets.xcassets in Resources */,
