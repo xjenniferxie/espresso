@@ -7,4 +7,8 @@ target 'espresso' do
 
   # Pods for espresso
 
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+
 end
