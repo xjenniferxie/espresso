@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eZV-0m-My1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X1q-ey-3GX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -16,6 +16,9 @@
         </array>
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans</string>
+        </array>
+        <array key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
         </array>
     </customFonts>
     <scenes>
@@ -74,6 +77,9 @@
                                                 <state key="normal" title="1">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="eZV-0m-My1" eventType="touchUpInside" id="ucS-DM-QvV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHh-kq-GwR">
                                                 <rect key="frame" x="126" y="0.0" width="123" height="63"/>
@@ -83,6 +89,9 @@
                                                 <state key="normal" title="2">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="eZV-0m-My1" eventType="touchUpInside" id="sYA-H2-Y1i"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQM-H0-Txi">
                                                 <rect key="frame" x="252" y="0.0" width="123" height="63"/>
@@ -92,6 +101,9 @@
                                                 <state key="normal" title="3">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="eZV-0m-My1" eventType="touchUpInside" id="RTo-nl-s7x"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -110,6 +122,9 @@
                                                 <state key="normal" title="4">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="eZV-0m-My1" eventType="touchUpInside" id="v3R-D8-nts"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBt-ge-Ugc">
                                                 <rect key="frame" x="126" y="0.0" width="123" height="62.5"/>
@@ -119,6 +134,9 @@
                                                 <state key="normal" title="5">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="eZV-0m-My1" eventType="touchUpInside" id="pD1-1L-3AV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UU8-Pi-8aK">
                                                 <rect key="frame" x="252" y="0.0" width="123" height="62.5"/>
@@ -128,6 +146,9 @@
                                                 <state key="normal" title="6">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="eZV-0m-My1" eventType="touchUpInside" id="wIm-yT-R0Q"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -146,6 +167,9 @@
                                                 <state key="normal" title="7">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="eZV-0m-My1" eventType="touchUpInside" id="0T6-uF-0Jt"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buH-KK-4oa">
                                                 <rect key="frame" x="126" y="0.0" width="123" height="63"/>
@@ -155,6 +179,9 @@
                                                 <state key="normal" title="8">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="eZV-0m-My1" eventType="touchUpInside" id="BFY-XX-4k1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rk2-eB-0lH">
                                                 <rect key="frame" x="252" y="0.0" width="123" height="63"/>
@@ -164,6 +191,9 @@
                                                 <state key="normal" title="9">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="eZV-0m-My1" eventType="touchUpInside" id="ZCm-cD-51Z"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -182,6 +212,9 @@
                                                 <state key="normal" title="X">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="deletePressed:" destination="eZV-0m-My1" eventType="touchUpInside" id="0l1-dV-eJD"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPb-NW-lWO">
                                                 <rect key="frame" x="126" y="0.0" width="123" height="62.5"/>
@@ -191,6 +224,9 @@
                                                 <state key="normal" title="0">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="eZV-0m-My1" eventType="touchUpInside" id="Vve-bA-eEg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8x-6y-Eso">
                                                 <rect key="frame" x="252" y="0.0" width="123" height="62.5"/>
@@ -200,6 +236,9 @@
                                                 <state key="normal" title="Add">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="addPressed:" destination="eZV-0m-My1" eventType="touchUpInside" id="ym4-nY-kZR"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -233,10 +272,13 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="drinkPressed:" destination="eZV-0m-My1" eventType="touchUpInside" id="gse-wx-5H4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qow-fS-jNY">
                                         <rect key="frame" x="138.5" y="15" width="98" height="45"/>
-                                        <color key="backgroundColor" name="MediumGrey"/>
+                                        <color key="backgroundColor" name="Charcoal"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="KeG-fP-eVE"/>
                                         </constraints>
@@ -249,10 +291,13 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="drinkPressed:" destination="eZV-0m-My1" eventType="touchUpInside" id="HXI-BZ-sL5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HO-z3-avL">
                                         <rect key="frame" x="256.5" y="15" width="98.5" height="45"/>
-                                        <color key="backgroundColor" name="MediumGrey"/>
+                                        <color key="backgroundColor" name="Charcoal"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Fhf-ge-bwA"/>
                                         </constraints>
@@ -265,6 +310,9 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="drinkPressed:" destination="eZV-0m-My1" eventType="touchUpInside" id="5gZ-uf-6K7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="Charcoal"/>
@@ -282,23 +330,43 @@
                                     <constraint firstItem="Qow-fS-jNY" firstAttribute="centerY" secondItem="RFE-Pi-Gdf" secondAttribute="centerY" id="jVF-n1-zuu"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gcK-CI-FBP">
-                                <rect key="frame" x="0.0" y="216" width="375" height="117"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gcK-CI-FBP">
+                                <rect key="frame" x="0.0" y="278" width="375" height="54"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="117" id="qvP-Yx-aN3"/>
+                                    <constraint firstAttribute="height" constant="54" id="qvP-Yx-aN3"/>
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" name="FadedGrey"/>
                             </tableView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nvu-Xp-vNn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYI-rT-R4i">
+                                        <rect key="frame" x="105" y="95" width="164" height="87.5"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="64"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="Mint"/>
+                                <constraints>
+                                    <constraint firstItem="YYI-rT-R4i" firstAttribute="centerY" secondItem="Nvu-Xp-vNn" secondAttribute="centerY" id="7v0-JY-30R"/>
+                                    <constraint firstItem="YYI-rT-R4i" firstAttribute="centerX" secondItem="Nvu-Xp-vNn" secondAttribute="centerX" id="GpJ-Uk-BbU"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="FadedGrey"/>
                         <constraints>
+                            <constraint firstItem="Nvu-Xp-vNn" firstAttribute="width" secondItem="r1h-R0-jii" secondAttribute="width" id="2G5-cg-yhK"/>
+                            <constraint firstItem="gcK-CI-FBP" firstAttribute="top" secondItem="Nvu-Xp-vNn" secondAttribute="bottom" id="60A-7v-tbA"/>
                             <constraint firstItem="RFE-Pi-Gdf" firstAttribute="width" secondItem="r1h-R0-jii" secondAttribute="width" id="7fR-RM-4Wl"/>
+                            <constraint firstItem="Nvu-Xp-vNn" firstAttribute="centerX" secondItem="NzO-1i-wnk" secondAttribute="centerX" id="IT2-2W-BTR"/>
                             <constraint firstItem="Tzj-r5-5IF" firstAttribute="top" secondItem="RFE-Pi-Gdf" secondAttribute="bottom" id="LS9-Rq-4qO"/>
                             <constraint firstItem="Tzj-r5-5IF" firstAttribute="centerX" secondItem="NzO-1i-wnk" secondAttribute="centerX" id="OP8-q0-svX"/>
                             <constraint firstItem="gcK-CI-FBP" firstAttribute="width" secondItem="r1h-R0-jii" secondAttribute="width" id="Skg-NS-SQR"/>
                             <constraint firstItem="Tzj-r5-5IF" firstAttribute="width" secondItem="r1h-R0-jii" secondAttribute="width" id="UVA-0e-413"/>
-                            <constraint firstItem="RFE-Pi-Gdf" firstAttribute="top" secondItem="gcK-CI-FBP" secondAttribute="bottom" constant="-1" id="VAw-JZ-CaL"/>
+                            <constraint firstItem="RFE-Pi-Gdf" firstAttribute="top" secondItem="gcK-CI-FBP" secondAttribute="bottom" id="VAw-JZ-CaL"/>
+                            <constraint firstItem="NzO-1i-wnk" firstAttribute="top" secondItem="Nvu-Xp-vNn" secondAttribute="top" constant="20" id="cTU-eL-XSC"/>
                             <constraint firstItem="gcK-CI-FBP" firstAttribute="leading" secondItem="NzO-1i-wnk" secondAttribute="leading" id="cyw-SX-GB3"/>
                             <constraint firstItem="NzO-1i-wnk" firstAttribute="bottom" secondItem="Tzj-r5-5IF" secondAttribute="bottom" id="qbs-W0-Ps4"/>
                             <constraint firstItem="NzO-1i-wnk" firstAttribute="trailing" secondItem="RFE-Pi-Gdf" secondAttribute="trailing" id="r11-da-16R"/>
@@ -306,7 +374,21 @@
                         <viewLayoutGuide key="safeArea" id="NzO-1i-wnk"/>
                     </view>
                     <connections>
+                        <outlet property="bobaButton" destination="Qow-fS-jNY" id="h9u-HS-KfG"/>
+                        <outlet property="coffeeButton" destination="B0W-xQ-ee3" id="8sQ-Se-GVW"/>
+                        <outlet property="eightButton" destination="buH-KK-4oa" id="HMz-5e-Txc"/>
+                        <outlet property="fiveButton" destination="RBt-ge-Ugc" id="90A-pf-2q0"/>
+                        <outlet property="fourButton" destination="Gkk-Ob-sG0" id="Un4-qD-xQn"/>
+                        <outlet property="nineButton" destination="rk2-eB-0lH" id="jm4-1l-O5g"/>
+                        <outlet property="oneButton" destination="cot-sb-zmu" id="HG4-nK-3zT"/>
+                        <outlet property="otherButton" destination="7HO-z3-avL" id="LCH-qK-aj0"/>
+                        <outlet property="priceLabel" destination="YYI-rT-R4i" id="aGs-5g-qdc"/>
+                        <outlet property="sevenButton" destination="yEa-mK-DGt" id="Vmy-Hz-8YI"/>
+                        <outlet property="sixButton" destination="UU8-Pi-8aK" id="GWg-DN-wun"/>
                         <outlet property="tableView" destination="gcK-CI-FBP" id="TrT-Gn-8Zb"/>
+                        <outlet property="threeButton" destination="jQM-H0-Txi" id="MhG-Ve-2oF"/>
+                        <outlet property="twoButton" destination="zHh-kq-GwR" id="5cx-bY-1Ob"/>
+                        <outlet property="zeroButton" destination="VPb-NW-lWO" id="koj-tn-deO"/>
                         <segue destination="BdA-sC-4wm" kind="show" identifier="addDrinkToHome" id="1et-d8-cub"/>
                     </connections>
                 </viewController>
@@ -526,12 +608,13 @@
             <objects>
                 <navigationController id="SwZ-he-FkI" customClass="NavigationController" customModule="espresso" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="FAl-qG-RSg"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="rAs-nM-NSz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" backIndicatorImage="back-chevron.png" id="rAs-nM-NSz">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -545,6 +628,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back-chevron.png" width="13" height="21"/>
         <namedColor name="Black">
             <color red="0.1289999932" green="0.1289999932" blue="0.1289999932" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -555,19 +639,16 @@
             <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Green">
-            <color red="0.21600000560283661" green="0.75700002908706665" blue="0.52899998426437378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Green">
             <color red="0.21600000559999999" green="0.75700002909999997" blue="0.52899998429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="MediumGrey">
-            <color red="0.476000011" green="0.476000011" blue="0.476000011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Green">
+            <color red="0.21600000560283661" green="0.75700002908706665" blue="0.52899998426437378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MediumGrey">
             <color red="0.47600001096725464" green="0.47600001096725464" blue="0.47600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="MediumGrey">
-            <color red="0.476000011" green="0.476000011" blue="0.476000011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Mint">
+            <color red="0.70200002193450928" green="1" blue="0.70200002193450928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Mint">
             <color red="0.70200002189999999" green="1" blue="0.70200002189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -583,7 +664,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ddh-da-RKH"/>
         <segue reference="ktH-L2-RoC"/>
         <segue reference="1et-d8-cub"/>
     </inferredMetricsTieBreakers>
