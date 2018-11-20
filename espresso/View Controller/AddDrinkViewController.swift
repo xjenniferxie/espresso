@@ -7,11 +7,21 @@
 //
 
 import UIKit
+import Eureka
 
-class AddDrinkViewController: UIViewController {
+class AddDrinkViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        form +++ Section()
+            <<< DateRow(){
+                $0.title = "Date Row"
+                $0.value = Date()
+                }.cellUpdate {cell, row in
+                    cell.textLabel?.font = UIFont(name: "Open Sans", size: 18)
+                    cell.tintColor = UIColor(named: "Green")
+                    cell.detailTextLabel?.font = UIFont(name: "Open Sans", size: 18)
+                }
 
     }
     

@@ -61,33 +61,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Tzj-r5-5IF">
-                                <rect key="frame" x="0.0" y="367" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="407" width="375" height="260"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HJ2-97-Zkj">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cot-sb-zmu">
-                                                <rect key="frame" x="0.0" y="0.0" width="123" height="73"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="123" height="63"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="36"/>
                                                 <color key="tintColor" name="Green"/>
                                                 <state key="normal" title="1">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHh-kq-GwR">
-                                                <rect key="frame" x="126" y="0.0" width="123" height="73"/>
+                                                <rect key="frame" x="126" y="0.0" width="123" height="63"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="36"/>
                                                 <color key="tintColor" name="Green"/>
                                                 <state key="normal" title="2">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQM-H0-Txi">
-                                                <rect key="frame" x="252" y="0.0" width="123" height="73"/>
+                                                <rect key="frame" x="252" y="0.0" width="123" height="63"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="36"/>
                                                 <color key="tintColor" name="Green"/>
                                                 <state key="normal" title="3">
                                                     <color key="titleColor" name="Black"/>
@@ -100,30 +100,30 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pwX-DJ-JJZ">
-                                        <rect key="frame" x="0.0" y="76" width="375" height="72.5"/>
+                                        <rect key="frame" x="0.0" y="66" width="375" height="62.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkk-Ob-sG0">
-                                                <rect key="frame" x="0.0" y="0.0" width="123" height="72.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="123" height="62.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="36"/>
                                                 <color key="tintColor" name="Green"/>
                                                 <state key="normal" title="4">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBt-ge-Ugc">
-                                                <rect key="frame" x="126" y="0.0" width="123" height="72.5"/>
+                                                <rect key="frame" x="126" y="0.0" width="123" height="62.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="36"/>
                                                 <color key="tintColor" name="Green"/>
                                                 <state key="normal" title="5">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UU8-Pi-8aK">
-                                                <rect key="frame" x="252" y="0.0" width="123" height="72.5"/>
+                                                <rect key="frame" x="252" y="0.0" width="123" height="62.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="36"/>
                                                 <color key="tintColor" name="Green"/>
                                                 <state key="normal" title="6">
                                                     <color key="titleColor" name="Black"/>
@@ -136,30 +136,30 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cvh-Fx-r1A">
-                                        <rect key="frame" x="0.0" y="151.5" width="375" height="73"/>
+                                        <rect key="frame" x="0.0" y="131.5" width="375" height="63"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEa-mK-DGt">
-                                                <rect key="frame" x="0.0" y="0.0" width="123" height="73"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="123" height="63"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="36"/>
                                                 <color key="tintColor" name="Green"/>
                                                 <state key="normal" title="7">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buH-KK-4oa">
-                                                <rect key="frame" x="126" y="0.0" width="123" height="73"/>
+                                                <rect key="frame" x="126" y="0.0" width="123" height="63"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="36"/>
                                                 <color key="tintColor" name="Green"/>
                                                 <state key="normal" title="8">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rk2-eB-0lH">
-                                                <rect key="frame" x="252" y="0.0" width="123" height="73"/>
+                                                <rect key="frame" x="252" y="0.0" width="123" height="63"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="36"/>
                                                 <color key="tintColor" name="Green"/>
                                                 <state key="normal" title="9">
                                                     <color key="titleColor" name="Black"/>
@@ -172,30 +172,30 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wu8-VQ-6BO">
-                                        <rect key="frame" x="0.0" y="227.5" width="375" height="72.5"/>
+                                        <rect key="frame" x="0.0" y="197.5" width="375" height="62.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2A-Gh-tlx">
-                                                <rect key="frame" x="0.0" y="0.0" width="123" height="72.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="123" height="62.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="36"/>
                                                 <color key="tintColor" name="Green"/>
                                                 <state key="normal" title="X">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPb-NW-lWO">
-                                                <rect key="frame" x="126" y="0.0" width="123" height="72.5"/>
+                                                <rect key="frame" x="126" y="0.0" width="123" height="62.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="36"/>
                                                 <color key="tintColor" name="Green"/>
                                                 <state key="normal" title="0">
                                                     <color key="titleColor" name="Black"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8x-6y-Eso">
-                                                <rect key="frame" x="252" y="0.0" width="123" height="72.5"/>
+                                                <rect key="frame" x="252" y="0.0" width="123" height="62.5"/>
                                                 <color key="backgroundColor" name="Green"/>
-                                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="28"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="24"/>
                                                 <color key="tintColor" name="Mint"/>
                                                 <state key="normal" title="Add">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -211,12 +211,12 @@
                                 <constraints>
                                     <constraint firstItem="wu8-VQ-6BO" firstAttribute="height" secondItem="HJ2-97-Zkj" secondAttribute="height" id="4BM-N5-ZK5"/>
                                     <constraint firstItem="Cvh-Fx-r1A" firstAttribute="height" secondItem="HJ2-97-Zkj" secondAttribute="height" id="9LZ-hX-bey"/>
-                                    <constraint firstAttribute="height" constant="300" id="Dlw-FY-P6J"/>
+                                    <constraint firstAttribute="height" constant="260" id="Dlw-FY-P6J"/>
                                     <constraint firstItem="pwX-DJ-JJZ" firstAttribute="height" secondItem="HJ2-97-Zkj" secondAttribute="height" id="Jqh-2G-Syo"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RFE-Pi-Gdf">
-                                <rect key="frame" x="0.0" y="292" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="332" width="375" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0W-xQ-ee3">
                                         <rect key="frame" x="20" y="15" width="98.5" height="45"/>
@@ -282,19 +282,31 @@
                                     <constraint firstItem="Qow-fS-jNY" firstAttribute="centerY" secondItem="RFE-Pi-Gdf" secondAttribute="centerY" id="jVF-n1-zuu"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gcK-CI-FBP">
+                                <rect key="frame" x="0.0" y="216" width="375" height="117"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117" id="qvP-Yx-aN3"/>
+                                </constraints>
+                                <color key="sectionIndexBackgroundColor" name="FadedGrey"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" name="FadedGrey"/>
                         <constraints>
                             <constraint firstItem="RFE-Pi-Gdf" firstAttribute="width" secondItem="r1h-R0-jii" secondAttribute="width" id="7fR-RM-4Wl"/>
                             <constraint firstItem="Tzj-r5-5IF" firstAttribute="top" secondItem="RFE-Pi-Gdf" secondAttribute="bottom" id="LS9-Rq-4qO"/>
                             <constraint firstItem="Tzj-r5-5IF" firstAttribute="centerX" secondItem="NzO-1i-wnk" secondAttribute="centerX" id="OP8-q0-svX"/>
+                            <constraint firstItem="gcK-CI-FBP" firstAttribute="width" secondItem="r1h-R0-jii" secondAttribute="width" id="Skg-NS-SQR"/>
                             <constraint firstItem="Tzj-r5-5IF" firstAttribute="width" secondItem="r1h-R0-jii" secondAttribute="width" id="UVA-0e-413"/>
+                            <constraint firstItem="RFE-Pi-Gdf" firstAttribute="top" secondItem="gcK-CI-FBP" secondAttribute="bottom" constant="-1" id="VAw-JZ-CaL"/>
+                            <constraint firstItem="gcK-CI-FBP" firstAttribute="leading" secondItem="NzO-1i-wnk" secondAttribute="leading" id="cyw-SX-GB3"/>
                             <constraint firstItem="NzO-1i-wnk" firstAttribute="bottom" secondItem="Tzj-r5-5IF" secondAttribute="bottom" id="qbs-W0-Ps4"/>
                             <constraint firstItem="NzO-1i-wnk" firstAttribute="trailing" secondItem="RFE-Pi-Gdf" secondAttribute="trailing" id="r11-da-16R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NzO-1i-wnk"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="gcK-CI-FBP" id="TrT-Gn-8Zb"/>
                         <segue destination="BdA-sC-4wm" kind="show" identifier="addDrinkToHome" id="1et-d8-cub"/>
                     </connections>
                 </viewController>
