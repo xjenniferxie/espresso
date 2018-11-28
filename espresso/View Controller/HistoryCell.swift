@@ -10,5 +10,12 @@ import Foundation
 import UIKit
 
 class HistoryCell: UITableViewCell {
+  
+    @IBOutlet weak var coffeeSpendingLabel: UILabel!
+    @IBOutlet weak var bobaSpendingLabel: UILabel!
+    @IBOutlet weak var otherSpendingLabel: UILabel!
+    @IBOutlet weak var coffeeCountLabel: UILabel!
+    @IBOutlet weak var bobaCountLabel: UILabel!
+    @IBOutlet weak var otherCountLabel: UILabel!
     
 }

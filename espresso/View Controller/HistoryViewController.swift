@@ -21,13 +21,15 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var historyTableView: UITableView!
     
+    var expandedSectionHeaderNumber: Int = -1
+    var expandedSectionHeader: UITableViewHeaderFooterView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         historyTableView.delegate = self
         historyTableView.dataSource = self
-        
-        // self.tableView!.tableFooterView = UIView()
+        // self.historyTableView!.tableFooterView = UIView()
         
         // Initialize past 12 months
         var currDate: Date = Date()
@@ -73,12 +75,18 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                     }
                 }
                 
-//                // TEMP - COMMENT OUT
+                // TEMP - COMMENT OUT
 //                for m in self.sectionMonths {
 //                    print(m.month, m.year)
 //                    print(m.totalSpending)
 //                    print(m.totalCount)
 //                    print(m.overBudget)
+//                    print(m.coffeeSpending)
+//                    print(m.coffeeCount)
+//                    print(m.bobaSpending)
+//                    print(m.bobaCount)
+//                    print(m.otherSpending)
+//                    print(m.otherCount)
 //                }
             }
             
@@ -88,31 +96,110 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionMonths.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if (self.expandedSectionHeaderNumber == section) {
+            return 1
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        print(self.sectionMonths[section].month)
         return self.sectionMonths[section].month
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        //recast your view as a UITableViewHeaderFooterView
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.contentView.backgroundColor = UIColor(named: "Green")
+        header.textLabel?.textColor = UIColor(named: "White")
+        
+        // make headers touchable
+        header.tag = section
+        let headerTapGesture = UITapGestureRecognizer()
+        headerTapGesture.addTarget(self, action: #selector(HistoryViewController.sectionHeaderWasTouched(_:)))
+        header.addGestureRecognizer(headerTapGesture)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell", for: indexPath) as! HistoryCell
-        let m = self.sectionMonths[indexPath.section] as Month
-        cell.dateLabel?.text = m.month
-        cell.spendingLabel?.text = String(m.totalSpending)
-        cell.countLabel?.text = String(m.totalCount)
-        print(m.month)
+        let m = self.sectionMonths[indexPath.section]
+        cell.coffeeSpendingLabel?.text = String(m.coffeeSpending)
+        cell.coffeeCountLabel?.text = String(m.coffeeCount)
+        cell.bobaSpendingLabel?.text = String(m.bobaSpending)
+        cell.bobaCountLabel?.text = String(m.bobaCount)
+        cell.otherSpendingLabel?.text = String(m.otherSpending)
+        cell.otherCountLabel?.text = String(m.otherCount)
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAtindexPath: IndexPath) {
-        tableView.deselectRow(at: didDeselectRowAtindexPath, animated: true)
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    @objc func sectionHeaderWasTouched(_ sender: UITapGestureRecognizer) {
+        let headerView = sender.view as! UITableViewHeaderFooterView
+        let section = headerView.tag
+        
+        print("section header touched", section)
+        
+        if (self.expandedSectionHeaderNumber == -1) {
+            self.expandedSectionHeaderNumber = section
+            tableViewExpandSection(section)
+        } else {
+            if (self.expandedSectionHeaderNumber == section) {
+                tableViewCollapeSection(section)
+            } else {
+                tableViewCollapeSection(self.expandedSectionHeaderNumber)
+                tableViewExpandSection(section)
+            }
+        }
+    }
+    
+    func tableViewCollapeSection(_ section: Int) {
+        self.expandedSectionHeaderNumber = -1;
+        
+        var indexesPath = [IndexPath]()
+        let index = IndexPath(row: 0, section: section)
+        indexesPath.append(index)
+        
+        self.historyTableView!.beginUpdates()
+        self.historyTableView!.deleteRows(at: indexesPath, with: UITableViewRowAnimation.fade)
+        self.historyTableView!.endUpdates()
+    }
+    
+    func tableViewExpandSection(_ section: Int) {
+        var indexesPath = [IndexPath]()
+        let index = IndexPath(row: 0, section: section)
+        indexesPath.append(index)
+        
+        self.expandedSectionHeaderNumber = section
+        
+        self.historyTableView!.beginUpdates()
+        self.historyTableView!.insertRows(at: indexesPath, with: UITableViewRowAnimation.fade)
+        self.historyTableView!.endUpdates()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0;
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
+        return 0;
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150;
     }
     
     override func didReceiveMemoryWarning() {

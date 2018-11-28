@@ -560,6 +560,14 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bobaCountLabel" destination="E3L-vv-c2V" id="kbl-wx-gpQ"/>
+                                            <outlet property="bobaSpendingLabel" destination="uwd-m0-CZM" id="xyK-09-UrC"/>
+                                            <outlet property="coffeeCountLabel" destination="k5I-Hh-w8i" id="f4L-1J-cXj"/>
+                                            <outlet property="coffeeSpendingLabel" destination="1gI-ru-BFp" id="2w9-3G-oEV"/>
+                                            <outlet property="otherCountLabel" destination="FLE-S6-iTW" id="psd-2m-SvH"/>
+                                            <outlet property="otherSpendingLabel" destination="PUs-Jw-ugm" id="nd8-Tf-KaS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
