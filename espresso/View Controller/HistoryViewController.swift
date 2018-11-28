@@ -16,20 +16,17 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     let ref = Database.database().reference()
     let user = Auth.auth().currentUser
     
-    // Past 12 months
-    var sectionMonths: [Month] = []
-    
     @IBOutlet weak var historyTableView: UITableView!
     
     var expandedSectionHeaderNumber: Int = -1
     var expandedSectionHeader: UITableViewHeaderFooterView!
+    var sectionMonths: [Month] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         historyTableView.delegate = self
         historyTableView.dataSource = self
-        // self.historyTableView!.tableFooterView = UIView()
         
         // Initialize past 12 months
         var currDate: Date = Date()
@@ -53,6 +50,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                     allTransactions.append(t)
                 }
                 
+                // Update info for each month
                 for t in allTransactions {
                     for m in self.sectionMonths {
                         if m.month == t.date.getMonthName() && m.year == t.date.getYearName() {
@@ -75,21 +73,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                     }
                 }
                 
-                // TEMP - COMMENT OUT
-//                for m in self.sectionMonths {
-//                    print(m.month, m.year)
-//                    print(m.totalSpending)
-//                    print(m.totalCount)
-//                    print(m.overBudget)
-//                    print(m.coffeeSpending)
-//                    print(m.coffeeCount)
-//                    print(m.bobaSpending)
-//                    print(m.bobaCount)
-//                    print(m.otherSpending)
-//                    print(m.otherCount)
-//                }
             }
-            
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -98,8 +82,14 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
+    // TABLEVIEW METHODS
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionMonths.count
@@ -118,7 +108,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        //recast your view as a UITableViewHeaderFooterView
+        // recast your view as a UITableViewHeaderFooterView
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         header.contentView.backgroundColor = UIColor(named: "Green")
         header.textLabel?.textColor = UIColor(named: "White")
@@ -146,11 +136,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    
+    // Behavior when section header touched
+    
     @objc func sectionHeaderWasTouched(_ sender: UITapGestureRecognizer) {
         let headerView = sender.view as! UITableViewHeaderFooterView
         let section = headerView.tag
-        
-        print("section header touched", section)
         
         if (self.expandedSectionHeaderNumber == -1) {
             self.expandedSectionHeaderNumber = section
@@ -190,6 +181,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     
+    // Height
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44.0;
     }
@@ -202,8 +195,4 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         return 150;
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
