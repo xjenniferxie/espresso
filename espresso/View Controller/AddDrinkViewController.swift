@@ -8,6 +8,8 @@
 
 import UIKit
 import Eureka
+import FirebaseDatabase
+import FirebaseAuth
 
 class AddDrinkViewController: FormViewController {
 
@@ -35,6 +37,11 @@ class AddDrinkViewController: FormViewController {
     var price: Int = 0
     var drink: String = "coffee"
     
+    // Firebase
+    let ref = Database.database().reference()
+    let user = Auth.auth().currentUser
+    let dateFormatter = DateFormatter()
+
     // Drink button pressed
     @IBAction func drinkPressed(_ sender: UIButton) {
         switch sender {
@@ -109,12 +116,13 @@ class AddDrinkViewController: FormViewController {
         let row: DateRow? = form.rowBy(tag: "myDateRow")
         let date = row?.value
         let priceDecimal: Double = Double(price) / 100
+        let info: [String:Any] = ["date": dateFormatter.string(from: date!),
+                                  "drink": drink,
+                                  "price": priceDecimal]
         
-        print(date)
-        print(drink)
-        print(priceDecimal)
+        ref.child("Users").child((user?.uid)!).childByAutoId().setValue(info)
         
-        performSegue(withIdentifier: "addDrinkToHome", sender: sender)
+        performSegue(withIdentifier: "unwindToHome", sender: sender)
     }
     
     override func viewDidLoad() {
@@ -122,9 +130,6 @@ class AddDrinkViewController: FormViewController {
         
         // Customize navigation bar
         self.navigationItem.title = "Add Drink"
-        
-        // Hide tab bar
-        self.tabBarController?.tabBar.isHidden = true
         
         // Add date row
         form +++ Section() {
@@ -141,6 +146,9 @@ class AddDrinkViewController: FormViewController {
                     cell.tintColor = UIColor(named: "Green")
                     cell.height = ({ return 54 })
                 }
+        
+        // Set date formatter
+        dateFormatter.dateFormat = "MMM-dd-yyyy"
     }
     
     override func didReceiveMemoryWarning() {
