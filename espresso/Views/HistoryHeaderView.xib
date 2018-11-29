@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="02Z-Gh-E2q" customClass="HistoryHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Zet-yI-bgl">
+                    <rect key="frame" x="0.0" y="0.0" width="343" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syM-K5-uXa">
+                            <rect key="frame" x="0.0" y="0.0" width="112.5" height="80"/>
+                            <color key="backgroundColor" name="LightMint"/>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
+                            <color key="textColor" name="Black"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jm1-SV-iqR">
+                            <rect key="frame" x="115.5" y="0.0" width="112" height="80"/>
+                            <color key="backgroundColor" name="LightMint"/>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
+                            <color key="textColor" name="Black"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6j-cc-MSE">
+                            <rect key="frame" x="230.5" y="0.0" width="112.5" height="80"/>
+                            <color key="backgroundColor" name="LightMint"/>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
+                            <color key="textColor" name="Black"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="z6j-cc-MSE" firstAttribute="width" secondItem="syM-K5-uXa" secondAttribute="width" id="LKD-5z-d5U"/>
+                        <constraint firstItem="jm1-SV-iqR" firstAttribute="width" secondItem="syM-K5-uXa" secondAttribute="width" id="vAf-69-0Jh"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Zet-yI-bgl" firstAttribute="centerX" secondItem="Thp-6A-CWK" secondAttribute="centerX" id="MW0-rO-eKn"/>
+                <constraint firstItem="Zet-yI-bgl" firstAttribute="width" secondItem="02Z-Gh-E2q" secondAttribute="width" id="jTh-dX-hgT"/>
+                <constraint firstItem="Zet-yI-bgl" firstAttribute="height" secondItem="02Z-Gh-E2q" secondAttribute="height" id="kZc-lW-fvs"/>
+                <constraint firstItem="Zet-yI-bgl" firstAttribute="centerY" secondItem="Thp-6A-CWK" secondAttribute="centerY" id="orC-LR-tz6"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Thp-6A-CWK"/>
+            <connections>
+                <outlet property="monthLabel" destination="syM-K5-uXa" id="2AQ-7c-kaW"/>
+                <outlet property="totalCountLabel" destination="z6j-cc-MSE" id="03l-Hw-q7J"/>
+                <outlet property="totalSpendingLabel" destination="jm1-SV-iqR" id="QzD-Tz-xIa"/>
+            </connections>
+            <point key="canvasLocation" x="-221.5" y="286"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Black">
+            <color red="0.1289999932050705" green="0.1289999932050705" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightMint">
+            <color red="0.84700000286102295" green="1" blue="0.84700000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

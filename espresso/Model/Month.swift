@@ -8,8 +8,8 @@
 
 import Foundation
 
-let userDrinkLimit: Int = 5
-let userBudget: Double = 20
+let userMonthDrinkLimit: Int = 20
+let userMonthBudget: Double = 80
 
 class Month {
     var month: String
@@ -39,7 +39,7 @@ class Month {
         self.totalCount = coffeeCount + bobaCount + otherCount
         
         self.overBudget = false
-        if (totalSpending >= userBudget || totalCount >= userDrinkLimit) {
+        if (totalSpending >= userMonthBudget || totalCount >= userMonthDrinkLimit) {
             self.overBudget = true
         }
     }
@@ -49,7 +49,7 @@ class Month {
         self.totalCount = coffeeCount + bobaCount + otherCount
         
         self.overBudget = false
-        if (totalSpending >= userBudget || totalCount >= userDrinkLimit) {
+        if (totalSpending >= userMonthBudget || totalCount >= userMonthDrinkLimit) {
             self.overBudget = true
         }
     }
@@ -58,6 +58,13 @@ class Month {
 
 
 extension Date {
+    func getDayName() -> String {
+        let dayDateFormatter = DateFormatter()
+        dayDateFormatter.dateFormat = "dd"
+        let strDay = dayDateFormatter.string(from: self)
+        return strDay
+    }
+    
     func getMonthName() -> String {
         let monthDateFormatter = DateFormatter()
         monthDateFormatter.dateFormat = "MMM"

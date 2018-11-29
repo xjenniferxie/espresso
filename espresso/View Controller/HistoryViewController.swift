@@ -28,6 +28,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         historyTableView.delegate = self
         historyTableView.dataSource = self
         
+//        let headerNib = UINib.init(nibName: "HistoryHeaderView", bundle: Bundle.main)
+//        historyTableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "HistoryHeaderView")
+        
         // Initialize past 12 months
         var currDate: Date = Date()
         var prevDate: Date
@@ -104,14 +107,25 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.sectionMonths[section].month
+        let m = self.sectionMonths[section]
+        return "\(m.month)     $\(m.totalSpending)     \(m.totalCount)"
     }
+    
+    // FIX
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HistoryHeaderView") as? HistoryHeaderView
+//        let m = self.sectionMonths[section]
+//        headerView.monthLabel.text = m.month
+//        headerView.totalSpendingLabel.text = String(m.totalSpending)
+//        headerView.totalCountLabel.text = String(m.totalCount)
+//        return headerView
+//    }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         // recast your view as a UITableViewHeaderFooterView
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.contentView.backgroundColor = UIColor(named: "Green")
-        header.textLabel?.textColor = UIColor(named: "White")
+        header.contentView.backgroundColor = UIColor(named: "LightMint")
+        header.textLabel?.textColor = UIColor(named: "Black")
         
         // make headers touchable
         header.tag = section
@@ -184,7 +198,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     // Height
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 44.0;
+        return 80;
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
