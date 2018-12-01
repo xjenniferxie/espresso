@@ -127,9 +127,9 @@ class CurrentViewController: UIViewController, UITableViewDelegate, UITableViewD
         print(w.bobaCount)
         
         if w.getStartMonth() == w.getEndMonth() {
-            return "\(w.getStartMonth()) \(w.getStartDay()) - \(w.getEndDay())     $\(w.totalSpending)     \(w.totalCount)"
+            return "\(w.getStartMonth()) \(w.getStartDay()) - \(w.getEndDay())          $\(w.totalSpending)          \(w.totalCount)"
         } else {
-            return "\(w.getStartMonth()) \(w.getStartDay()) - \(w.getEndMonth()) \(w.getEndDay())     $\(w.totalSpending)     \(w.totalCount)"
+            return "\(w.getStartMonth()) \(w.getStartDay()) - \(w.getEndMonth()) \(w.getEndDay())          $\(w.totalSpending)          \(w.totalCount)"
         }
     }
     

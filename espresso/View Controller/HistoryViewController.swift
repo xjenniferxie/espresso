@@ -108,7 +108,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let m = self.sectionMonths[section]
-        return "\(m.month)     $\(m.totalSpending)     \(m.totalCount)"
+        return "\(m.month)          $\(m.totalSpending)          \(m.totalCount)"
     }
     
     // FIX
@@ -124,7 +124,11 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         // recast your view as a UITableViewHeaderFooterView
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.contentView.backgroundColor = UIColor(named: "LightMint")
+        if sectionMonths[section].overBudget {
+            header.contentView.backgroundColor = UIColor(named: "LightRed")
+        } else {
+            header.contentView.backgroundColor = UIColor(named: "LightMint")
+        }
         header.textLabel?.textColor = UIColor(named: "Black")
         
         // make headers touchable
