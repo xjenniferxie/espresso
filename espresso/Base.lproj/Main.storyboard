@@ -653,7 +653,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7CB-kO-C2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2385" y="-127"/>
+            <point key="canvasLocation" x="2384.8000000000002" y="-127.28635682158921"/>
         </scene>
         <!--Month-->
         <scene sceneID="Rjx-UR-GnU">
@@ -1034,14 +1034,8 @@
         <namedColor name="MediumGrey">
             <color red="0.41200000047683716" green="0.41200000047683716" blue="0.41200000047683716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="MediumGrey">
-            <color red="0.41200000047683716" green="0.41200000047683716" blue="0.41200000047683716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Mint">
             <color red="0.70200002193450928" green="1" blue="0.70200002193450928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="White">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

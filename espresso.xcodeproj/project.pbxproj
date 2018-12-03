@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0122821EB4660A639DA74DA1 /* Pods_espresso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4337F51BCA273B3BA2F992 /* Pods_espresso.framework */; };
 		6418153E21AF47F50067EFC9 /* WeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6418153D21AF47F50067EFC9 /* WeekCell.swift */; };
+		643B813921B5428700B06A4B /* HistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648E300321AEE923008C4B6B /* HistoryHeaderView.xib */; };
+		643B813A21B5429700B06A4B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846D5219D1D5A00FD9376 /* HistoryViewController.swift */; };
+		643B813B21B542D400B06A4B /* HistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E2FFF21AEE8E6008C4B6B /* HistoryHeaderView.swift */; };
 		64554DF821A22AAD008B2E66 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64C464B92193E74A004D4EA7 /* Info.plist */; };
 		64554DFA21A23789008B2E66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64554DF921A23789008B2E66 /* GoogleService-Info.plist */; };
 		64554DFC21A26BD1008B2E66 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64554DFB21A26BD1008B2E66 /* LoginViewController.swift */; };
@@ -17,8 +20,6 @@
 		6475B89921A4942A002156DB /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6475B89821A4942A002156DB /* Week.swift */; };
 		6475B89B21A4943B002156DB /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6475B89A21A4943B002156DB /* Month.swift */; };
 		648E2FFC21AED300008C4B6B /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E2FFB21AED300008C4B6B /* HistoryCell.swift */; };
-		648E300021AEE8E6008C4B6B /* HistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E2FFF21AEE8E6008C4B6B /* HistoryHeaderView.swift */; };
-		648E300421AEE923008C4B6B /* HistoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648E300321AEE923008C4B6B /* HistoryHeaderView.xib */; };
 		64C464AE2193E747004D4EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C464AD2193E747004D4EA7 /* AppDelegate.swift */; };
 		64C464B32193E747004D4EA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64C464B12193E747004D4EA7 /* Main.storyboard */; };
 		64C464B52193E74A004D4EA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64C464B42193E74A004D4EA7 /* Assets.xcassets */; };
@@ -27,7 +28,6 @@
 		64E846CE219D1BC400FD9376 /* AddDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846CD219D1BC400FD9376 /* AddDrinkViewController.swift */; };
 		64E846D0219D1C4000FD9376 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846CF219D1C4000FD9376 /* MainTabBarController.swift */; };
 		64E846D4219D1D3A00FD9376 /* CurrentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846D3219D1D3A00FD9376 /* CurrentViewController.swift */; };
-		64E846D6219D1D5A00FD9376 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846D5219D1D5A00FD9376 /* HistoryViewController.swift */; };
 		64E846DC219D1F9F00FD9376 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E846DB219D1F9F00FD9376 /* NavigationController.swift */; };
 		64F3AB3D21A34CE600216A4F /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64554DF621A22A93008B2E66 /* OpenSans-Bold.ttf */; };
 		64F3AB3E21A34CE600216A4F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64554DF521A22A93008B2E66 /* OpenSans-Regular.ttf */; };
@@ -242,7 +242,7 @@
 				64F3AB3E21A34CE600216A4F /* OpenSans-Regular.ttf in Resources */,
 				64F3AB3F21A34CE600216A4F /* OpenSans-Semibold.ttf in Resources */,
 				64554DFA21A23789008B2E66 /* GoogleService-Info.plist in Resources */,
-				648E300421AEE923008C4B6B /* HistoryHeaderView.xib in Resources */,
+				643B813921B5428700B06A4B /* HistoryHeaderView.xib in Resources */,
 				64C464B82193E74A004D4EA7 /* LaunchScreen.storyboard in Resources */,
 				64C464B52193E74A004D4EA7 /* Assets.xcassets in Resources */,
 				64FBB2CB21A28ADE00DE4CF2 /* Colors.xcassets in Resources */,
@@ -305,9 +305,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				648E300021AEE8E6008C4B6B /* HistoryHeaderView.swift in Sources */,
 				6475B89721A49349002156DB /* Transaction.swift in Sources */,
 				64554DFC21A26BD1008B2E66 /* LoginViewController.swift in Sources */,
+				643B813A21B5429700B06A4B /* HistoryViewController.swift in Sources */,
 				64C464AE2193E747004D4EA7 /* AppDelegate.swift in Sources */,
 				648E2FFC21AED300008C4B6B /* HistoryCell.swift in Sources */,
 				64E846DC219D1F9F00FD9376 /* NavigationController.swift in Sources */,
@@ -317,7 +317,7 @@
 				64554DFE21A26DD9008B2E66 /* SignUpViewController.swift in Sources */,
 				64E846D0219D1C4000FD9376 /* MainTabBarController.swift in Sources */,
 				64E846D4219D1D3A00FD9376 /* CurrentViewController.swift in Sources */,
-				64E846D6219D1D5A00FD9376 /* HistoryViewController.swift in Sources */,
+				643B813B21B542D400B06A4B /* HistoryHeaderView.swift in Sources */,
 				64E846CC219D1B7200FD9376 /* HomeViewController.swift in Sources */,
 				6475B89B21A4943B002156DB /* Month.swift in Sources */,
 			);

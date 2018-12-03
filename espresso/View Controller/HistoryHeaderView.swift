@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class HistoryHeaderView: UITableViewHeaderFooterView {
-    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var myMonthLabel: UILabel!
     @IBOutlet weak var totalSpendingLabel: UILabel!
     @IBOutlet weak var totalCountLabel: UILabel!
 }

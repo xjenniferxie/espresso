@@ -28,8 +28,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         historyTableView.delegate = self
         historyTableView.dataSource = self
         
-//        let headerNib = UINib.init(nibName: "HistoryHeaderView", bundle: Bundle.main)
-//        historyTableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "HistoryHeaderView")
+        let headerNib = UINib.init(nibName: "HistoryHeaderView", bundle: Bundle.main)
+        historyTableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "HistoryHeaderView")
         
         // Initialize past 12 months
         var currDate: Date = Date()
@@ -44,7 +44,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Get all transactions from Firebase
         ref.child("Users").child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
             let values = snapshot.value as? [String:Any]
-            
+
             if let transactions = values {
                 var allTransactions: [Transaction] = []
                 for (_, tValue) in transactions {
@@ -52,7 +52,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                     let t = Transaction(date: info["date"] as! String, drink: info["drink"] as! String, price: info["price"] as! Double)
                     allTransactions.append(t)
                 }
-                
+
                 // Update info for each month
                 for t in allTransactions {
                     for m in self.sectionMonths {
@@ -75,16 +75,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
                         }
                     }
                 }
-                
+
             }
         }) { (error) in
             print(error.localizedDescription)
         }
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -105,32 +101,26 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             return 0
         }
     }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HistoryHeaderView") as! HistoryHeaderView
         let m = self.sectionMonths[section]
-        return "\(m.month)          $\(m.totalSpending)          \(m.totalCount)"
+        headerView.myMonthLabel.text = m.month
+        headerView.totalSpendingLabel.text = String(m.totalSpending)
+        headerView.totalCountLabel.text = String(m.totalCount)
+        return headerView
     }
-    
-    // FIX
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HistoryHeaderView") as? HistoryHeaderView
-//        let m = self.sectionMonths[section]
-//        headerView.monthLabel.text = m.month
-//        headerView.totalSpendingLabel.text = String(m.totalSpending)
-//        headerView.totalCountLabel.text = String(m.totalCount)
-//        return headerView
-//    }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         // recast your view as a UITableViewHeaderFooterView
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        if sectionMonths[section].overBudget {
-            header.contentView.backgroundColor = UIColor(named: "LightRed")
-        } else {
-            header.contentView.backgroundColor = UIColor(named: "LightMint")
-        }
-        header.textLabel?.textColor = UIColor(named: "Black")
-        
+//        if sectionMonths[section].overBudget {
+//            header.contentView.backgroundColor = UIColor(named: "LightRed")
+//        } else {
+//            header.contentView.backgroundColor = UIColor(named: "LightMint")
+//        }
+//        header.textLabel?.textColor = UIColor(named: "Black")
+
         // make headers touchable
         header.tag = section
         let headerTapGesture = UITapGestureRecognizer()
