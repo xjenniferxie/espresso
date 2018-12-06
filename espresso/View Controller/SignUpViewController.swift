@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
@@ -46,6 +47,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     }
                     print("account created")
                     self.performSegue(withIdentifier: "signUpToHome", sender: self)
+                    
+                    let ref = Database.database().reference()
+                    ref.child("Users").child((user?.uid)!).child("historyUpToDate").setValue(false)
+                    ref.child("Users").child((user?.uid)!).child("currentUpToDate").setValue(false)
+                    
                 } else if password != verifiedPassword {
                     let alertController = UIAlertController(title: "Verification Error.", message: "The two passwords do not match.", preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)

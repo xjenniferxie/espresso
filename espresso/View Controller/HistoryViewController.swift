@@ -31,56 +31,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let headerNib = UINib.init(nibName: "HistoryHeaderView", bundle: Bundle.main)
         historyTableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "HistoryHeaderView")
         
-        // Initialize past 12 months
-        var currDate: Date = Date()
-        var prevDate: Date
-        for _ in 1...12 {
-            prevDate = Calendar.current.date(byAdding: .month, value: -1, to: currDate)!
-            let month = Month(month: prevDate.getMonthName(), year: prevDate.getYearName())
-            sectionMonths.append(month)
-            currDate = prevDate
-        }
-        
-        // Get all transactions from Firebase
-        ref.child("Users").child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
-            let values = snapshot.value as? [String:Any]
-
-            if let transactions = values {
-                var allTransactions: [Transaction] = []
-                for (_, tValue) in transactions {
-                    let info = tValue as! [String:Any]
-                    let t = Transaction(date: info["date"] as! String, drink: info["drink"] as! String, price: info["price"] as! Double)
-                    allTransactions.append(t)
-                }
-
-                // Update info for each month
-                for t in allTransactions {
-                    for m in self.sectionMonths {
-                        if m.month == t.date.getMonthName() && m.year == t.date.getYearName() {
-                            switch t.drink {
-                            case "coffee":
-                                m.coffeeCount += 1
-                                m.coffeeSpending += t.price
-                            case "boba":
-                                m.bobaCount += 1
-                                m.bobaSpending += t.price
-                            case "other":
-                                m.otherCount += 1
-                                m.otherSpending += t.price
-                            default:
-                                print("error, transaction did not have valid drink")
-                            }
-                            m.update()
-                            break
-                        }
-                    }
-                }
-
-            }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-
+        self.sectionMonths = self.historyFromTransactions()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.sectionMonths = self.historyFromTransactions()
     }
     
     override func didReceiveMemoryWarning() {
@@ -108,18 +64,18 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         headerView.myMonthLabel.text = m.month
         headerView.totalSpendingLabel.text = String(m.totalSpending)
         headerView.totalCountLabel.text = String(m.totalCount)
+        
+        if m.overBudget {
+            headerView.myMonthLabel.backgroundColor = UIColor(named: "LightRed")
+            headerView.totalSpendingLabel.backgroundColor = UIColor(named: "LightRed")
+            headerView.totalCountLabel.backgroundColor = UIColor(named: "LightRed")
+        }
         return headerView
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         // recast your view as a UITableViewHeaderFooterView
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-//        if sectionMonths[section].overBudget {
-//            header.contentView.backgroundColor = UIColor(named: "LightRed")
-//        } else {
-//            header.contentView.backgroundColor = UIColor(named: "LightMint")
-//        }
-//        header.textLabel?.textColor = UIColor(named: "Black")
 
         // make headers touchable
         header.tag = section
@@ -192,7 +148,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     // Height
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 80;
+        return 60;
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
@@ -202,5 +158,93 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150;
     }
+    
+    
+    // LOADING DATA HELPER METHODS
+    
+    // Transactions have been updated
+    func historyFromTransactions() -> [Month] {
+        var monthsList: [Month] = []
+        
+        // Initialize past 12 months
+        var currDate: Date = Date()
+        var prevDate: Date
+        for _ in 1...12 {
+            prevDate = Calendar.current.date(byAdding: .month, value: -1, to: currDate)!
+            let month = Month(month: prevDate.getMonthName(), year: prevDate.getYearName())
+            monthsList.append(month)
+            currDate = prevDate
+        }
+        
+        // Get all transactions from Firebase
+        ref.child("Users").child((user?.uid)!).child("Transactions").observeSingleEvent(of: .value, with: { (snapshot) in
+            let values = snapshot.value as? [String:Any]
+            
+            if let transactions = values {
+                var allTransactions: [Transaction] = []
+                for (_, tValue) in transactions {
+                    let info = tValue as! [String:Any]
+                    let t = Transaction(date: info["date"] as! String, drink: info["drink"] as! String, price: info["price"] as! Double)
+                    allTransactions.append(t)
+                }
+                
+                // Update info for each month
+                for t in allTransactions {
+                    for m in monthsList {
+                        if m.month == t.date.getMonthName() && m.year == t.date.getYearName() {
+                            switch t.drink {
+                            case "coffee":
+                                m.coffeeCount += 1
+                                m.coffeeSpending += t.price
+                            case "boba":
+                                m.bobaCount += 1
+                                m.bobaSpending += t.price
+                            case "other":
+                                m.otherCount += 1
+                                m.otherSpending += t.price
+                            default:
+                                print("error, transaction did not have valid drink")
+                            }
+                            m.update()
+                            break
+                        }
+                    }
+                }
+                
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        // Save newly generated version to Firebase
+//        var monthsInfo: [[String:Any]] = []
+//        for m in monthsList {
+//            monthsInfo.append(m.getInfo())
+//        }
+//        ref.child("Users").child((user?.uid)!).child("History").setValue(monthsInfo)
+        
+        ref.child("Users").child((user?.uid)!).child("historyUpToDate").setValue(true)
+        
+        return monthsList
+    }
+    
+    // Transactiosn not updated, months data in Firebae is accurate
+//    func historyFromFirebase() -> [Month] {
+//        var monthsList: [Month] = []
+//
+//        ref.child("Users").child((user?.uid)!).child("History").observeSingleEvent(of: .value, with: { (snapshot) in
+//            let firebaseMonths = snapshot.value as! [Int:Any]
+//            print(firebaseMonths)
+//            for (_, monthInfo) in firebaseMonths {
+//                let info = monthInfo as! [String:Any]
+//                print(info)
+//                let m = Month(info: info)
+//                monthsList.append(m)
+//            }
+//        })
+//
+//        return monthsList
+//    }
+    
     
 }

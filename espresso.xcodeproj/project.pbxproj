@@ -20,6 +20,7 @@
 		6475B89921A4942A002156DB /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6475B89821A4942A002156DB /* Week.swift */; };
 		6475B89B21A4943B002156DB /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6475B89A21A4943B002156DB /* Month.swift */; };
 		648E2FFC21AED300008C4B6B /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E2FFB21AED300008C4B6B /* HistoryCell.swift */; };
+		64AAFD2821B9C61F001EC031 /* EspressoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AAFD2721B9C61F001EC031 /* EspressoUtils.swift */; };
 		64C464AE2193E747004D4EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C464AD2193E747004D4EA7 /* AppDelegate.swift */; };
 		64C464B32193E747004D4EA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64C464B12193E747004D4EA7 /* Main.storyboard */; };
 		64C464B52193E74A004D4EA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64C464B42193E74A004D4EA7 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		648E2FFB21AED300008C4B6B /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		648E2FFF21AEE8E6008C4B6B /* HistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryHeaderView.swift; sourceTree = "<group>"; };
 		648E300321AEE923008C4B6B /* HistoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryHeaderView.xib; sourceTree = "<group>"; };
+		64AAFD2721B9C61F001EC031 /* EspressoUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EspressoUtils.swift; sourceTree = "<group>"; };
 		64C464AA2193E747004D4EA7 /* espresso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = espresso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64C464AD2193E747004D4EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64C464B22193E747004D4EA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				6475B89621A49349002156DB /* Transaction.swift */,
 				6475B89821A4942A002156DB /* Week.swift */,
 				6475B89A21A4943B002156DB /* Month.swift */,
+				64AAFD2721B9C61F001EC031 /* EspressoUtils.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				6475B89721A49349002156DB /* Transaction.swift in Sources */,
 				64554DFC21A26BD1008B2E66 /* LoginViewController.swift in Sources */,
 				643B813A21B5429700B06A4B /* HistoryViewController.swift in Sources */,
+				64AAFD2821B9C61F001EC031 /* EspressoUtils.swift in Sources */,
 				64C464AE2193E747004D4EA7 /* AppDelegate.swift in Sources */,
 				648E2FFC21AED300008C4B6B /* HistoryCell.swift in Sources */,
 				64E846DC219D1F9F00FD9376 /* NavigationController.swift in Sources */,

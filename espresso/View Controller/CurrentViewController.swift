@@ -41,7 +41,7 @@ class CurrentViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         // Get all transactions from Firebase
-        ref.child("Users").child((user?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("Users").child((user?.uid)!).child("Transactions").observeSingleEvent(of: .value, with: { (snapshot) in
             let values = snapshot.value as? [String:Any]
 
             if let transactions = values {
@@ -74,21 +74,6 @@ class CurrentViewController: UIViewController, UITableViewDelegate, UITableViewD
                         }
                     }
                 }
-                
-                // TESTING
-                for w in self.sectionWeeks {
-                    print("")
-                    print(w.getStartMonth(), w.getStartDay())
-                    print(w.getEndMonth(), w.getEndDay())
-                    print(w.totalSpending)
-                    print(w.totalCount)
-                    print(w.coffeeSpending)
-                    print(w.coffeeCount)
-                    print(w.bobaSpending)
-                    print(w.bobaCount)
-                    print(w.bobaSpending)
-                    print(w.bobaCount)
-                }
 
             }
         }) { (error) in
@@ -113,19 +98,6 @@ class CurrentViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let w = self.sectionWeeks[section]
-        
-        print("title-testing-----")
-        print(w.getStartMonth(), w.getStartDay())
-        print(w.getEndMonth(), w.getEndDay())
-        print(w.totalSpending)
-        print(w.totalCount)
-        print(w.coffeeSpending)
-        print(w.coffeeCount)
-        print(w.bobaSpending)
-        print(w.bobaCount)
-        print(w.bobaSpending)
-        print(w.bobaCount)
-        
         if w.getStartMonth() == w.getEndMonth() {
             return "\(w.getStartMonth()) \(w.getStartDay()) - \(w.getEndDay())          $\(w.totalSpending)          \(w.totalCount)"
         } else {

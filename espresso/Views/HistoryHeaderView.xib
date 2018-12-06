@@ -50,6 +50,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
+                    <color key="backgroundColor" name="White"/>
                     <constraints>
                         <constraint firstItem="z6j-cc-MSE" firstAttribute="width" secondItem="syM-K5-uXa" secondAttribute="width" id="LKD-5z-d5U"/>
                         <constraint firstItem="jm1-SV-iqR" firstAttribute="width" secondItem="syM-K5-uXa" secondAttribute="width" id="vAf-69-0Jh"/>
@@ -83,6 +84,9 @@
         </namedColor>
         <namedColor name="LightMint">
             <color red="0.84700000286102295" green="1" blue="0.84700000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

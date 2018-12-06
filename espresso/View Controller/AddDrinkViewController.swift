@@ -120,7 +120,9 @@ class AddDrinkViewController: FormViewController {
                                   "drink": drink,
                                   "price": priceDecimal]
         
-        ref.child("Users").child((user?.uid)!).childByAutoId().setValue(info)
+        ref.child("Users").child((user?.uid)!).child("Transactions").childByAutoId().setValue(info)
+        ref.child("Users").child((user?.uid)!).child("historyUpToDate").setValue(false)
+        ref.child("Users").child((user?.uid)!).child("currentUpToDate").setValue(true)
         
         performSegue(withIdentifier: "unwindToHome", sender: sender)
     }

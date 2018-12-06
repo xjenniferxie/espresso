@@ -44,6 +44,26 @@ class Month {
         }
     }
     
+    init(info: [String:Any]) {
+        self.month = info["Month"] as! String
+        self.year = info["year"] as! String
+        self.coffeeSpending = info["coffeeSpending"] as! Double
+        self.coffeeCount = info["coffeeCount"] as! Int
+        self.bobaSpending = info["bobaSpending"] as! Double
+        self.bobaCount = info["bobaCount"] as! Int
+        self.otherSpending = info["otherSpending"] as! Double
+        self.otherCount = info["otherCount"] as! Int
+        
+        self.totalSpending = coffeeSpending + bobaSpending + otherSpending
+        self.totalCount = coffeeCount + bobaCount + otherCount
+        
+        self.overBudget = false
+        if (totalSpending >= userMonthBudget || totalCount >= userMonthDrinkLimit) {
+            self.overBudget = true
+        }
+    }
+    
+    // Run update after you've changed any of the 
     func update() {
         self.totalSpending = coffeeSpending + bobaSpending + otherSpending
         self.totalCount = coffeeCount + bobaCount + otherCount
@@ -54,30 +74,20 @@ class Month {
         }
     }
     
+    func getInfo() -> [String:Any] {
+        let info: [String:Any] = ["month": self.month,
+                                  "year": self.year,
+                                  "coffeeSpending": self.coffeeSpending,
+                                  "coffeeCount": self.coffeeCount,
+                                  "bobaSpending": self.bobaSpending,
+                                  "bobaCount": self.bobaCount,
+                                  "otherSpending": self.otherSpending,
+                                  "otherCount": self.otherCount]
+        return info
+    }
+    
 }
 
 
-extension Date {
-    func getDayName() -> String {
-        let dayDateFormatter = DateFormatter()
-        dayDateFormatter.dateFormat = "dd"
-        let strDay = dayDateFormatter.string(from: self)
-        return strDay
-    }
-    
-    func getMonthName() -> String {
-        let monthDateFormatter = DateFormatter()
-        monthDateFormatter.dateFormat = "MMM"
-        let strMonth = monthDateFormatter.string(from: self)
-        return strMonth
-    }
-    
-    func getYearName() -> String {
-        let yearDateFormatter = DateFormatter()
-        yearDateFormatter.dateFormat = "yyyy"
-        let strYear = yearDateFormatter.string(from: self)
-        return strYear
-    }
-}
 
 
