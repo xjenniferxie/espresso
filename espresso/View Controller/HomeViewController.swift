@@ -38,6 +38,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.currWeekFromTransactions()
         
+        print("---view did load---")
+        print(self.currWeek.startDate)
+        print(self.currWeek.endDate)
         print(self.currWeek.coffeeSpending)
         print(self.currWeek.coffeeCount)
         print(self.currWeek.bobaSpending)
@@ -49,11 +52,31 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.currWeekFromTransactions()
+        
+        print("---view did appear---")
+        print(self.currWeek.startDate)
+        print(self.currWeek.endDate)
+        print(self.currWeek.coffeeSpending)
+        print(self.currWeek.coffeeCount)
+        print(self.currWeek.bobaSpending)
+        print(self.currWeek.bobaCount)
+        print(self.currWeek.otherSpending)
+        print(self.currWeek.otherCount)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.currWeekFromTransactions()
+        
+        print("---view will appear---")
+        print(self.currWeek.startDate)
+        print(self.currWeek.endDate)
+        print(self.currWeek.coffeeSpending)
+        print(self.currWeek.coffeeCount)
+        print(self.currWeek.bobaSpending)
+        print(self.currWeek.bobaCount)
+        print(self.currWeek.otherSpending)
+        print(self.currWeek.otherCount)
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,7 +88,7 @@ class HomeViewController: UIViewController {
         let currMonth = FirstSundayAndNumWeeksInMonth(date: Date())
         let startDate = currMonth.0
         let endDate = Calendar.current.date(byAdding: .day, value: 6, to: startDate)!
-        currWeek = Week(startDate: startDate, endDate: endDate)
+        self.currWeek = Week(startDate: startDate, endDate: endDate)
         
         // Get all transactions from Firebase
         ref.child("Users").child((user?.uid)!).child("Transactions").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -92,10 +115,10 @@ class HomeViewController: UIViewController {
                         case "other":
                             self.currWeek.otherCount += 1
                             self.currWeek.otherSpending += t.price
-                        default:                                print("error, transaction did not have valid drink")
+                        default:
+                            print("error, transaction did not have valid drink")
                         }
                         self.currWeek.update()
-                        break
                     }
                 }
             }
@@ -105,20 +128,21 @@ class HomeViewController: UIViewController {
         
         drinkTotalLabel.text = "\(userWeekDrinkLimit) drinks"
         drinkNumLabel.text = "\(self.currWeek.totalCount)/"
-        moneySpentLabel.text = "\(formatMoney(amount: self.currWeek.totalSpending)) spent"
+        moneySpentLabel.text = "$\(Int(self.currWeek.totalSpending)) spent"
         if self.currWeek.totalSpending > userWeekBudget {
             moneyLeftLabel.text = "$0 left"
         } else {
             moneyLeftLabel.text = "$\(Int(userWeekBudget - self.currWeek.totalSpending)) left"
         }
         
-        // let fraction = Double(self.currWeek.totalCount) / Double(userWeekDrinkLimit)
-        let fraction = Double(3/5)
+        let fraction = Double(self.currWeek.totalCount) / Double(userWeekDrinkLimit)
+
         if self.currWeek.totalCount > userWeekDrinkLimit {
             progressBar.frame.size.width = totalBar.frame.size.width
         } else {
             progressBar.frame.size.width = CGFloat(fraction * Double(totalBar.frame.size.width))
         }
+        print("width of progress Bar is \(progressBar.frame.size.width)")
 
         if self.currWeek.overBudget {
             progressBar.backgroundColor = UIColor(named: "Red")
