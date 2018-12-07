@@ -28,58 +28,15 @@ class CurrentViewController: UIViewController, UITableViewDelegate, UITableViewD
         currentTableView.delegate = self
         currentTableView.dataSource = self
         
-        // Initialize weeks
-        let currMonth = FirstSundayAndNumWeeksInMonth(date: Date())
-        let numWeeks = currMonth.1!
-        var startDate = currMonth.0
-        var endDate: Date
-        for _ in 1...numWeeks {
-            endDate = Calendar.current.date(byAdding: .day, value: 6, to: startDate)!
-            let week = Week(startDate: startDate, endDate: endDate)
-            sectionWeeks.append(week)
-            startDate = Calendar.current.date(byAdding: .day, value: 1, to: endDate)!
-        }
+        let headerNib = UINib.init(nibName: "HistoryHeaderView", bundle: Bundle.main)
+        currentTableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "HistoryHeaderView")
         
-        // Get all transactions from Firebase
-        ref.child("Users").child((user?.uid)!).child("Transactions").observeSingleEvent(of: .value, with: { (snapshot) in
-            let values = snapshot.value as? [String:Any]
-
-            if let transactions = values {
-                var allTransactions: [Transaction] = []
-                for (_, tValue) in transactions {
-                    let info = tValue as! [String:Any]
-                    let t = Transaction(date: info["date"] as! String, drink: info["drink"] as! String, price: info["price"] as! Double)
-                    allTransactions.append(t)
-                }
-
-                // Update info for each week
-                for t in allTransactions {
-                    for w in self.sectionWeeks {
-                        if t.date >= w.startDate && t.date <= w.endDate {
-                            switch t.drink {
-                            case "coffee":
-                                w.coffeeCount += 1
-                                w.coffeeSpending += t.price
-                            case "boba":
-                                w.bobaCount += 1
-                                w.bobaSpending += t.price
-                            case "other":
-                                w.otherCount += 1
-                                w.otherSpending += t.price
-                            default:
-                                print("error, transaction did not have valid drink")
-                            }
-                            w.update()
-                            break
-                        }
-                    }
-                }
-
-            }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        
+        self.sectionWeeks = self.currentFromTransactions()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.sectionWeeks = self.currentFromTransactions()
     }
     
     // TABLEVIEW METHODS
@@ -96,20 +53,34 @@ class CurrentViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HistoryHeaderView") as! HistoryHeaderView
         let w = self.sectionWeeks[section]
         if w.getStartMonth() == w.getEndMonth() {
-            return "\(w.getStartMonth()) \(w.getStartDay()) - \(w.getEndDay())          $\(w.totalSpending)          \(w.totalCount)"
+            headerView.myMonthLabel.text = "\(w.getStartMonth()) \(w.getStartDay()) - \(w.getEndDay())"
         } else {
-            return "\(w.getStartMonth()) \(w.getStartDay()) - \(w.getEndMonth()) \(w.getEndDay())          $\(w.totalSpending)          \(w.totalCount)"
+            headerView.myMonthLabel.text = "\(w.getStartMonth()) \(w.getStartDay())-\(w.getEndMonth()) \(w.getEndDay())"
         }
+        headerView.totalSpendingLabel.text = formatMoney(amount: w.totalSpending)
+        headerView.totalCountLabel.text = String(w.totalCount)
+        
+        if w.overBudget {
+            headerView.myMonthLabel.backgroundColor = UIColor(named: "LightRed")
+            headerView.totalSpendingLabel.backgroundColor = UIColor(named: "LightRed")
+            headerView.totalCountLabel.backgroundColor = UIColor(named: "LightRed")
+        } else {
+            headerView.myMonthLabel.backgroundColor = UIColor(named: "LightMint")
+            headerView.totalSpendingLabel.backgroundColor = UIColor(named: "LightMint")
+            headerView.totalCountLabel.backgroundColor = UIColor(named: "LightMint")
+        }
+        
+        return headerView
     }
+
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         // recast your view as a UITableViewHeaderFooterView
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.contentView.backgroundColor = UIColor(named: "LightMint")
-        header.textLabel?.textColor = UIColor(named: "Black")
 
         // make headers touchable
         header.tag = section
@@ -121,11 +92,11 @@ class CurrentViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "weekCell", for: indexPath) as! WeekCell
         let w = self.sectionWeeks[indexPath.section]
-        cell.coffeeSpendingLabel?.text = String(w.coffeeSpending)
+        cell.coffeeSpendingLabel?.text = formatMoney(amount: w.coffeeSpending)
         cell.coffeeCountLabel?.text = String(w.coffeeCount)
-        cell.bobaSpendingLabel?.text = String(w.bobaSpending)
+        cell.bobaSpendingLabel?.text = formatMoney(amount: w.bobaSpending)
         cell.bobaCountLabel?.text = String(w.bobaCount)
-        cell.otherSpendingLabel?.text = String(w.otherSpending)
+        cell.otherSpendingLabel?.text = formatMoney(amount: w.otherSpending)
         cell.otherCountLabel?.text = String(w.otherCount)
         return cell
     }
@@ -178,7 +149,7 @@ class CurrentViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 80;
+        return 60;
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
@@ -194,4 +165,66 @@ class CurrentViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func currentFromTransactions() -> [Week] {
+        var weeksList: [Week] = []
+        
+        // Initialize weeks
+        let currMonth = FirstSundayAndNumWeeksInMonth(date: Date())
+        let numWeeks = currMonth.1!
+        var startDate = currMonth.0
+        var endDate: Date
+        for _ in 1...numWeeks {
+            endDate = Calendar.current.date(byAdding: .day, value: 6, to: startDate)!
+            let week = Week(startDate: startDate, endDate: endDate)
+            weeksList.append(week)
+            startDate = Calendar.current.date(byAdding: .day, value: 1, to: endDate)!
+        }
+        
+        // Get all transactions from Firebase
+        ref.child("Users").child((user?.uid)!).child("Transactions").observeSingleEvent(of: .value, with: { (snapshot) in
+            let values = snapshot.value as? [String:Any]
+            
+            if let transactions = values {
+                var allTransactions: [Transaction] = []
+                for (_, tValue) in transactions {
+                    let info = tValue as! [String:Any]
+                    let t = Transaction(date: info["date"] as! String, drink: info["drink"] as! String, price: info["price"] as! Double)
+                    allTransactions.append(t)
+                }
+                
+                // Update info for each week
+                for t in allTransactions {
+                    for w in weeksList {
+                        if t.date >= w.startDate && t.date <= w.endDate {
+                            switch t.drink {
+                            case "coffee":
+                                w.coffeeCount += 1
+                                w.coffeeSpending += t.price
+                            case "boba":
+                                w.bobaCount += 1
+                                w.bobaSpending += t.price
+                            case "other":
+                                w.otherCount += 1
+                                w.otherSpending += t.price
+                            default:
+                                print("error, transaction did not have valid drink")
+                            }
+                            w.update()
+                            break
+                        }
+                    }
+                }
+                
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        return weeksList
+    }
 }
+
+
+
+

@@ -62,14 +62,19 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HistoryHeaderView") as! HistoryHeaderView
         let m = self.sectionMonths[section]
         headerView.myMonthLabel.text = m.month
-        headerView.totalSpendingLabel.text = String(m.totalSpending)
+        headerView.totalSpendingLabel.text = formatMoney(amount: m.totalSpending)
         headerView.totalCountLabel.text = String(m.totalCount)
         
         if m.overBudget {
             headerView.myMonthLabel.backgroundColor = UIColor(named: "LightRed")
             headerView.totalSpendingLabel.backgroundColor = UIColor(named: "LightRed")
             headerView.totalCountLabel.backgroundColor = UIColor(named: "LightRed")
+        } else {
+            headerView.myMonthLabel.backgroundColor = UIColor(named: "LightMint")
+            headerView.totalSpendingLabel.backgroundColor = UIColor(named: "LightMint")
+            headerView.totalCountLabel.backgroundColor = UIColor(named: "LightMint")
         }
+        
         return headerView
     }
     
@@ -87,11 +92,11 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell", for: indexPath) as! HistoryCell
         let m = self.sectionMonths[indexPath.section]
-        cell.coffeeSpendingLabel?.text = String(m.coffeeSpending)
+        cell.coffeeSpendingLabel?.text = formatMoney(amount: m.coffeeSpending)
         cell.coffeeCountLabel?.text = String(m.coffeeCount)
-        cell.bobaSpendingLabel?.text = String(m.bobaSpending)
+        cell.bobaSpendingLabel?.text = formatMoney(amount: m.bobaSpending)
         cell.bobaCountLabel?.text = String(m.bobaCount)
-        cell.otherSpendingLabel?.text = String(m.otherSpending)
+        cell.otherSpendingLabel?.text = formatMoney(amount: m.otherSpending)
         cell.otherCountLabel?.text = String(m.otherCount)
         return cell
     }

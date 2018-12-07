@@ -91,24 +91,13 @@ class AddDrinkViewController: FormViewController {
         default:
             print("error, button is not number")
         }
-        updatePriceLabel()
+        priceLabel.text = formatMoney(amount: Double(price) / 100)
     }
     
     // Delete button pressed
     @IBAction func deletePressed(_ sender: UIButton) {
         price = Int(price / 10)
-        updatePriceLabel()
-    }
-    
-    // Update text of price label
-    func updatePriceLabel() {
-        if price < 10 {
-            priceLabel.text = "$0.0\(price)"
-        } else if price < 100 {
-            priceLabel.text = "$0.\(price)"
-        } else {
-            priceLabel.text = "$\(Int(price / 100)).\(price % 100)"
-        }
+        priceLabel.text = formatMoney(amount: Double(price) / 100)
     }
     
     // Add drink

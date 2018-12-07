@@ -73,28 +73,3 @@ class Week {
         return self.endDate.getDayName()
     }
 }
-
-func FirstSundayAndNumWeeksInMonth(date: Date) -> (Date, Int?) {
-    var calendar = Calendar(identifier: .gregorian)
-    calendar.firstWeekday = 1 // 1 == Sunday
-    
-    let year = calendar.component(.year, from: date)
-    let month = calendar.component(.month, from: date)
-    
-    // First Sunday in month:
-    var comps = DateComponents(year: year, month: month,
-                               weekday: calendar.firstWeekday, weekdayOrdinal: 1)
-    guard let first = calendar.date(from: comps)  else {
-        return (Date(), nil)
-    }
-    
-    // Last Sunday in month:
-    comps.weekdayOrdinal = -1
-    guard let last = calendar.date(from: comps)  else {
-        return (Date(), nil)
-    }
-    
-    // Difference in weeks:
-    let weeks = calendar.dateComponents([.weekOfMonth], from: first, to: last)
-    return (first, weeks.weekOfMonth! + 1)
-}
